@@ -1,0 +1,97 @@
+@mixin box-sizing($box) {
+    -webkit-box-sizing: $box;
+    -moz-box-sizing: $box;
+    box-sizing: $box;
+}
+
+// Do not use when transitionning prefixed properties
+// to avoid impossible code like `-moz-transition: -webkit-border-radius 1s`
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin transform-origin($args) {
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+    transform-origin: $args;
+}
+
+@mixin rotate($angle) {
+    @include transform(rotate($angle));
+}
+
+@mixin animation($args) {
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    animation: $args;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes $name { @content; }
+    @-moz-keyframes $name { @content; }
+    @keyframes $name { @content; }
+}
+
+@mixin rounded-corners($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
+@mixin background-size($args...) {
+    -webkit-background-size: $args;
+    -moz-background-size: $args;
+    background-size: $args;
+}
+
+// Sticky positioning
+// Support is very limited but should be used in iOS
+// See http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit
+@mixin sticky {
+    position: -webkit-sticky; // iOS 6+
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: sticky;
+}
+
+// Prevent user from selecting text
+@mixin user-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+// Vertical linear gradient with a plain fallback for older browsers
+@mixin simple-gradient($from, $to) {
+    // Fix for browsers not understanding transparent
+    @if $from == transparent {
+        $from: transparentize($to, 1);
+    }
+
+    @if $to == transparent {
+        $to: transparentize($from, 1);
+    }
+    background-color: $from;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+    background-image: -webkit-linear-gradient($from, $to);
+    background-image: linear-gradient(to bottom, $from, $to);
+}
