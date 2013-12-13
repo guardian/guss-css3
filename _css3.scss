@@ -70,12 +70,12 @@
     flex: $flex-grow $flex-shrink $flex-basis;
 }
 
-@mixin flex-grow($int: 0) {
-    -webkit-box-flex: $int;
-    -webkit-flex-grow: $int;
-    -moz-flex-grow: $int;
-    -ms-flex-positive: $int;
-    flex-grow: $int;
+@mixin flex-grow($value: 0) {
+    -webkit-box-flex: $value;
+    -webkit-flex-grow: $value;
+    -moz-flex-grow: $value;
+    -ms-flex-positive: $value;
+    flex-grow: $value;
 }
 
 @mixin flex-basis($value: auto) {

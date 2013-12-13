@@ -36,5 +36,8 @@ Provides Sass mixins for the most frequently used CSS3 features.
     @include sticky;
     @include user-select;
     @include simple-gradient(transparent, #ffffff);
+    @include flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto);
+    @include flex-grow(0);
+    @include flex-basis(auto);
 }
 ```
