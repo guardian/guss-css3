@@ -28,6 +28,7 @@ Provides Sass mixins for the most frequently used CSS3 features.
 .element {
     @include box-sizing(border-box);
     @include transition(width .2s ease-in-out);
+    @include transition-delay(.3s);
     @include transform(scale(1.3));
     @include transform-origin(0 50%);
     @include rotate(90deg);
