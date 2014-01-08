@@ -11,6 +11,11 @@
     -moz-transition: $args;
     transition: $args;
 }
+@mixin transition-delay($args...) {
+    -webkit-transition-delay: $args;
+    -moz-transition-delay: $args;
+    transition-delay: $args;
+}
 
 @mixin transform($args) {
     -webkit-transform: $args;
