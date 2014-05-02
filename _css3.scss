@@ -19,8 +19,13 @@
     @if $radius == 50% {
         $radius: 1000px;
     }
-    -webkit-border-radius: rem($radius);
-    border-radius: rem($radius);
+    @if function-exists(rem) {
+        -webkit-border-radius: rem($radius);
+        border-radius: rem($radius);
+    } @else {
+        -webkit-border-radius: $radius;
+        border-radius: $radius;
+    }
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
