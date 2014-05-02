@@ -1,3 +1,9 @@
+## 2.1.0 (2014-05-02)
+
+- [new] [`column-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width) property mixin, to suggest an optimal column width to the browser
+- [fix] [`rem`](https://github.com/guardian/guss-rem) function is no longer a dependency
+- [misc] mixins are ordered alphabetically
+
 ## 2.0.0 (2014-04-17)
 
 - [deprecated] remove `simple-gradient` mixin which is too application specific
