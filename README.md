@@ -35,6 +35,7 @@ Provides Sass mixins for the most frequently used CSS3 features.
     @include border-radius(30px);
     @include box-shadow(none);
     @include background-size(100% 60%);
+    @include column-width(300px);
     @include sticky;
     @include flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto);
     @include flex-grow(0);

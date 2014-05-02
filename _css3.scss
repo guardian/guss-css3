@@ -66,6 +66,18 @@
     background-size: $args;
 }
 
+@mixin column-width($value: auto) {
+    @if function-exists(rem) {
+        -webkit-column-width: rem($value);
+        -moz-column-width: rem($value);
+        column-width: rem($value);
+    } @else {
+        -webkit-column-width: $value;
+        -moz-column-width: $value;
+        column-width: $value;
+    }
+}
+
 @mixin flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto) {
     -webkit-box-flex: $flex-grow;
     -moz-box-flex: $flex-grow;
