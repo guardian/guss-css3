@@ -1,3 +1,7 @@
+## 2.1.1 (2014-06-24)
+
+- [new] [`animation-delay`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay) property mixin
+
 ## 2.1.0 (2014-05-02)
 
 - [new] [`column-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width) property mixin, to suggest an optimal column width to the browser
