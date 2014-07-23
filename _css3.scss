@@ -1,68 +1,123 @@
-// https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+/**
+ * `animation` prefixer.
+ *
+ * @param {*} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation animation on MDN
+ */
 @mixin animation($args) {
     -webkit-animation: $args;
     -moz-animation: $args;
     animation: $args;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay
+/**
+ * `animation-delay` prefixer.
+ *
+ * @param {*} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay animation-delay on MDN
+ */
 @mixin animation-delay($args) {
     -webkit-animation-delay: $args;
     -moz-animation-delay: $args;
     animation-delay: $args;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+/**
+ * `background-size` prefixer.
+ *
+ * @param {Arglist} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/background-size background-size on MDN
+ */
 @mixin background-size($args...) {
     -webkit-background-size: $args;
     -moz-background-size: $args;
     background-size: $args;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+/**
+ * `border-radius` prefixer.
+ *
+ * @param {Number} $radius (5px)
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius border-radius on MDN
+ */
 @mixin border-radius($radius: 5px) {
     // If we want to draw a circle, output a pixel value instead,
     // as older versions of WebKit do not support % in border-radius
     @if $radius == 50% {
         $radius: 1000px;
     }
+    
     @if function-exists(rem) {
         -webkit-border-radius: rem($radius);
         border-radius: rem($radius);
-    } @else {
+    } 
+    
+    @else {
         -webkit-border-radius: $radius;
         border-radius: $radius;
     }
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+/**
+ * `box-shadow` prefixer.
+ *
+ * @param {Arglist} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow box-shadow on MDN
+ */
 @mixin box-shadow($args...) {
     -webkit-box-shadow: $args;
     -moz-box-shadow: $args;
     box-shadow: $args;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+/**
+ * `box-sizing` prefixer.
+ *
+ * @param {String} $box
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing box-sizing on MDN
+ */
 @mixin box-sizing($box) {
     -webkit-box-sizing: $box;
     -moz-box-sizing: $box;
     box-sizing: $box;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/column-width
+/**
+ * `column-width` prefixer. Uses `rem` if defined.
+ *
+ * @param {String} $box
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/column-width column-width on MDN
+ */
 @mixin column-width($value: auto) {
     @if function-exists(rem) {
         -webkit-column-width: rem($value);
         -moz-column-width: rem($value);
         column-width: rem($value);
-    } @else {
+    } 
+
+    @else {
         -webkit-column-width: $value;
         -moz-column-width: $value;
         column-width: $value;
     }
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+/**
+ * `flex` prefixer.
+ *
+ * @param {Number}          $flex-grow   (0)
+ * @param {Number}          $flex-shring (1)
+ * @param {Number | String} $flex-basis  (auto)
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex flex on MDN
+ */
 @mixin flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto) {
     -webkit-box-flex: $flex-grow;
     -moz-box-flex: $flex-grow;
@@ -71,7 +126,13 @@
     flex: $flex-grow $flex-shrink $flex-basis;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
+/**
+ * `flex-grow` prefixer.
+ *
+ * @param {Number} $value (0)
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow flex-grow on MDN
+ */
 @mixin flex-grow($value: 0) {
     -webkit-box-flex: $value;
     -webkit-flex-grow: $value;
@@ -80,7 +141,13 @@
     flex-grow: $value;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
+/**
+ * `flex-basis` prefixer.
+ *
+ * @param {Number | String} $value (auto)
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis flex-basis on MDN
+ */
 @mixin flex-basis($value: auto) {
     -webkit-flex-basis: $value;
     -moz-flex-basis: $value;
@@ -88,22 +155,37 @@
     flex-basis: $value;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+/**
+ * `@keyframes` prefixer.
+ *
+ * @param {String} $name
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes @keyframes on MDN
+ */
 @mixin keyframes($name) {
     @-webkit-keyframes $name { @content; }
     @-moz-keyframes $name { @content; }
     @keyframes $name { @content; }
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate
+/**
+ * `transform: rotate()` prefixer.
+ *
+ * @param {Number} $angle
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate transform: rotate() on MDN
+ */
 @mixin rotate($angle) {
     @include transform(rotate($angle));
 }
 
-// Sticky positioning
-// Support is very limited but should be used in iOS
-// See http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit
-// https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning
+/**
+ * `position: sticky` prefixer.
+ * Support is very limited but should be used in iOS.
+ *
+ * @link http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit position: sticky on WebKit
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning position: sticky on MDN
+ */
 @mixin sticky {
     position: -webkit-sticky; // iOS 6+
     position: -moz-sticky;
@@ -111,7 +193,13 @@
     position: sticky;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+/**
+ * `transform` prefixer.
+ *
+ * @param {*} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform transform on MDN
+ */
 @mixin transform($args) {
     -webkit-transform: $args;
     -moz-transform: $args;
@@ -120,7 +208,13 @@
     transform: $args;
 }
 
-// https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
+/**
+ * `transform-origin` prefixer.
+ *
+ * @param {*} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin transform-origin on MDN
+ */
 @mixin transform-origin($args) {
     -webkit-transform-origin: $args;
     -moz-transform-origin: $args;
@@ -129,9 +223,15 @@
     transform-origin: $args;
 }
 
-// Do not use when transitionning prefixed properties
-// to avoid impossible code like `-moz-transition: -webkit-border-radius 1s`
-// https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+/**
+ * `transition` prefixer.
+ * Do not use when transitionning prefixed properties
+ * to avoid impossible code like `-moz-transition: -webkit-border-radius 1s`.
+ *
+ * @param {Arglist} $args
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition on MDN
+ */
 @mixin transition($args...) {
     -webkit-transition: $args;
     -moz-transition: $args;
