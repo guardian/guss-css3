@@ -1,3 +1,10 @@
+## 2.1.2 (2014-08-08)
+
+- Inline documentation uses [SassDoc](https://github.com/SassDoc/sassdoc) notation.
+- Improve inline documentation for `position: sticky`
+
+Thanks to @HugoGiraudel for his precious help!
+
 ## 2.1.1 (2014-06-24)
 
 - [new] [`animation-delay`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay) property mixin
