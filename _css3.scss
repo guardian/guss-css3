@@ -54,9 +54,7 @@
     @if function-exists(rem) {
         -webkit-border-radius: rem($radius);
         border-radius: rem($radius);
-    } 
-    
-    @else {
+    } @else {
         -webkit-border-radius: $radius;
         border-radius: $radius;
     }
@@ -100,9 +98,7 @@
         -webkit-column-width: rem($value);
         -moz-column-width: rem($value);
         column-width: rem($value);
-    } 
-
-    @else {
+    } @else {
         -webkit-column-width: $value;
         -moz-column-width: $value;
         column-width: $value;
@@ -163,9 +159,15 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes @keyframes on MDN
  */
 @mixin keyframes($name) {
-    @-webkit-keyframes $name { @content; }
-    @-moz-keyframes $name { @content; }
-    @keyframes $name { @content; }
+    @-webkit-keyframes $name {
+        @content;
+    }
+    @-moz-keyframes $name {
+        @content;
+    }
+    @keyframes $name {
+        @content;
+    }
 }
 
 /**
@@ -182,9 +184,12 @@
 /**
  * `position: sticky` prefixer.
  * Support is very limited but should be used in iOS.
+ * Note that Blink temporarily dropped support until they get their
+ * "scrolling and compositing house in order"
  *
  * @link http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit position: sticky on WebKit
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning position: sticky on MDN
+ * @link https://code.google.com/p/chromium/issues/detail?id=231752 Meta bug for position: sticky on Chromium's tracker
  */
 @mixin sticky {
     position: -webkit-sticky; // iOS 6+
