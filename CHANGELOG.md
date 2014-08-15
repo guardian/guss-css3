@@ -1,4 +1,4 @@
-## 2.2.2 (2014-08-15)
+## 2.2.0 (2014-08-15)
 
 - [new] Flexbox display and direction mixins
 ```scss
