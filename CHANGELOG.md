@@ -1,3 +1,11 @@
+## 2.2.2 (2014-08-15)
+
+- [new] Flexbox display and direction mixins
+```scss
+@include flex-display;
+@include flex-direction(row | row-reverse | column | column-reverse)
+```
+
 ## 2.1.2 (2014-08-08)
 
 - Inline documentation uses [SassDoc](https://github.com/SassDoc/sassdoc) notation.
