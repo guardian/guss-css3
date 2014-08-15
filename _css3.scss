@@ -123,18 +123,16 @@
 }
 
 /**
- * `flex-grow` prefixer.
+ * `flex-direction` prefixer.
  *
- * @param {Number} $value (0)
+ * @param {String} $direction
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow flex-grow on MDN
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
  */
-@mixin flex-grow($value: 0) {
-    -webkit-box-flex: $value;
-    -webkit-flex-grow: $value;
-    -moz-flex-grow: $value;
-    -ms-flex-positive: $value;
-    flex-grow: $value;
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
 }
 
 /**
@@ -149,6 +147,34 @@
     -moz-flex-basis: $value;
     -ms-flex-preferred-size: $value;
     flex-basis: $value;
+}
+
+/**
+ * `display: flex` prefixer.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex flex on MDN
+ */
+@mixin flex-display {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/**
+ * `flex-grow` prefixer.
+ *
+ * @param {Number} $value (0)
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow flex-grow on MDN
+ */
+@mixin flex-grow($value: 0) {
+    -webkit-box-flex: $value;
+    -webkit-flex-grow: $value;
+    -moz-flex-grow: $value;
+    -ms-flex-positive: $value;
+    flex-grow: $value;
 }
 
 /**
@@ -235,7 +261,7 @@
  *
  * @param {Arglist} $args
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition on MDN
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition transition on MDN
  */
 @mixin transition($args...) {
     -webkit-transition: $args;
