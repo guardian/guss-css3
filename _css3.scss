@@ -235,10 +235,36 @@
  *
  * @param {Arglist} $args
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition on MDN
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition transition on MDN
  */
 @mixin transition($args...) {
     -webkit-transition: $args;
     -moz-transition: $args;
     transition: $args;
+}
+
+/**
+ * `display: flex` prefixer.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex flex on MDN
+ */
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/**
+ * `flex-direction` prefixer.
+ *
+ * @param {String} $direction
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
+ */
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
 }
