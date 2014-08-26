@@ -4,6 +4,8 @@
  * @param {*} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation animation on MDN
+ * 
+ * @group css3
  */
 @mixin animation($args) {
     -webkit-animation: $args;
@@ -17,6 +19,8 @@
  * @param {*} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay animation-delay on MDN
+ * 
+ * @group css3
  */
 @mixin animation-delay($args) {
     -webkit-animation-delay: $args;
@@ -30,6 +34,8 @@
  * @param {Arglist} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/background-size background-size on MDN
+ * 
+ * @group css3
  */
 @mixin background-size($args...) {
     -webkit-background-size: $args;
@@ -43,6 +49,8 @@
  * @param {Number} $radius (5px)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius border-radius on MDN
+ * 
+ * @group css3
  */
 @mixin border-radius($radius: 5px) {
     // If we want to draw a circle, output a pixel value instead,
@@ -66,6 +74,8 @@
  * @param {Arglist} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow box-shadow on MDN
+ * 
+ * @group css3
  */
 @mixin box-shadow($args...) {
     -webkit-box-shadow: $args;
@@ -79,6 +89,8 @@
  * @param {String} $box
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing box-sizing on MDN
+ * 
+ * @group css3
  */
 @mixin box-sizing($box) {
     -webkit-box-sizing: $box;
@@ -92,6 +104,8 @@
  * @param {String} $box
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/column-width column-width on MDN
+ * 
+ * @group css3
  */
 @mixin column-width($value: auto) {
     @if function-exists(rem) {
@@ -113,6 +127,8 @@
  * @param {Number | String} $flex-basis  (auto)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex flex on MDN
+ * 
+ * @group css3
  */
 @mixin flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto) {
     -webkit-box-flex: $flex-grow;
@@ -128,6 +144,8 @@
  * @param {String} $direction row | row-reverse | column | column-reverse
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
+ * 
+ * @group css3
  */
 @mixin flex-direction($direction) {
     -webkit-flex-direction: $direction;
@@ -141,6 +159,8 @@
  * @param {Number | String} $value (auto)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis flex-basis on MDN
+ * 
+ * @group css3
  */
 @mixin flex-basis($value: auto) {
     -webkit-flex-basis: $value;
@@ -153,6 +173,8 @@
  * `display: flex` prefixer.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex flex on MDN
+ * 
+ * @group css3
  */
 @mixin flex-display {
     display: -webkit-box;
@@ -168,6 +190,8 @@
  * @param {Number} $value (0)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow flex-grow on MDN
+ * 
+ * @group css3
  */
 @mixin flex-grow($value: 0) {
     -webkit-box-flex: $value;
@@ -183,6 +207,8 @@
  * @param {String} $name
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes @keyframes on MDN
+ * 
+ * @group css3
  */
 @mixin keyframes($name) {
     @-webkit-keyframes $name {
@@ -202,6 +228,8 @@
  * @param {Number} $angle
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate transform: rotate() on MDN
+ * 
+ * @group css3
  */
 @mixin rotate($angle) {
     @include transform(rotate($angle));
@@ -216,6 +244,8 @@
  * @link http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit position: sticky on WebKit
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning position: sticky on MDN
  * @link https://code.google.com/p/chromium/issues/detail?id=231752 Meta bug for position: sticky on Chromium's tracker
+ * 
+ * @group css3
  */
 @mixin sticky {
     position: -webkit-sticky; // iOS 6+
@@ -230,6 +260,8 @@
  * @param {*} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform transform on MDN
+ * 
+ * @group css3
  */
 @mixin transform($args) {
     -webkit-transform: $args;
@@ -245,6 +277,8 @@
  * @param {*} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin transform-origin on MDN
+ * 
+ * @group css3
  */
 @mixin transform-origin($args) {
     -webkit-transform-origin: $args;
@@ -262,6 +296,8 @@
  * @param {Arglist} $args
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition transition on MDN
+ * 
+ * @group css3
  */
 @mixin transition($args...) {
     -webkit-transition: $args;
