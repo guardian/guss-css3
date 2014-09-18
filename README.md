@@ -2,7 +2,11 @@
 
 Part of the [Guss](https://github.com/guardian/guss) collection.
 
-[View the docs](http://guardian.github.io/guss-css3`/)
+[View the docs](http://guardian.github.io/guss-css3/)
+
+## Features
+
+Provides Sass mixins for the most frequently used CSS3 features.
 
 ## Installation
 
@@ -24,15 +28,7 @@ $ bower install guss--css3 --save
 
 ```
 @import 'bower_components/guss-css3/src/_-css3'
-```
 
-## Features
-
-Provides Sass mixins for the most frequently used CSS3 features.
-
-## Example
-
-```scss
 @include keyframes(fadeIn) {
     0%   { opacity: 0; }
     100% { opacity: 1; }
