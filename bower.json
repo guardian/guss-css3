@@ -1,4 +1,11 @@
 {
   "name": "guss-css3",
-  "main": "_css3.scss"
+  "description": "Collection of CSS3 helpers",
+  "version": "2.2.1",
+  "main": "src/_css3.scss",
+  "homepage": "https://github.com/guardian/guss-css3",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/guardian/guss-css3.git"
+  },
 }
