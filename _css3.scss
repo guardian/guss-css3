@@ -139,21 +139,6 @@
 }
 
 /**
- * `flex-direction` prefixer.
- *
- * @param {String} $direction row | row-reverse | column | column-reverse
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
- * 
- * @group css3
- */
-@mixin flex-direction($direction) {
-    -webkit-flex-direction: $direction;
-    -ms-flex-direction: $direction;
-    flex-direction: $direction;
-}
-
-/**
  * `flex-basis` prefixer.
  *
  * @param {Number | String} $value (auto)
@@ -167,6 +152,21 @@
     -moz-flex-basis: $value;
     -ms-flex-preferred-size: $value;
     flex-basis: $value;
+}
+
+/**
+ * `flex-direction` prefixer.
+ *
+ * @param {String} $direction row | row-reverse | column | column-reverse
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
+ * 
+ * @group css3
+ */
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
 }
 
 /**
