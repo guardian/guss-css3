@@ -86,7 +86,7 @@
 /**
  * `box-sizing` prefixer.
  *
- * @param {String} $box
+ * @param {String} $box content-box | padding-box | border-box
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing box-sizing on MDN
  * 
@@ -101,7 +101,7 @@
 /**
  * `column-width` prefixer. Uses `rem` if defined.
  *
- * @param {String} $box
+ * @param {String} $value (auto)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/column-width column-width on MDN
  * 
