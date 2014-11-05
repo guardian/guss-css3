@@ -229,6 +229,8 @@
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate transform: rotate() on MDN
  * 
+ * @requires {mixin} transform
+ *
  * @group css3
  */
 @mixin rotate($angle) {
