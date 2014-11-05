@@ -290,7 +290,7 @@
 
 /**
  * `transition` prefixer.
- * Do not use when transitionning prefixed properties
+ * Do not use when transitioning prefixed properties
  * to avoid impossible code like `-moz-transition: -webkit-border-radius 1s`.
  *
  * @param {Arglist} $args
