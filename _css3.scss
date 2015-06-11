@@ -86,7 +86,7 @@
 /**
  * `box-sizing` prefixer.
  *
- * @param {String} $box
+ * @param {String} $box content-box | padding-box | border-box
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing box-sizing on MDN
  * 
@@ -101,7 +101,7 @@
 /**
  * `column-width` prefixer. Uses `rem` if defined.
  *
- * @param {String} $box
+ * @param {String} $value (auto)
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/column-width column-width on MDN
  * 
@@ -139,21 +139,6 @@
 }
 
 /**
- * `flex-direction` prefixer.
- *
- * @param {String} $direction row | row-reverse | column | column-reverse
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
- * 
- * @group css3
- */
-@mixin flex-direction($direction) {
-    -webkit-flex-direction: $direction;
-    -ms-flex-direction: $direction;
-    flex-direction: $direction;
-}
-
-/**
  * `flex-basis` prefixer.
  *
  * @param {Number | String} $value (auto)
@@ -167,6 +152,21 @@
     -moz-flex-basis: $value;
     -ms-flex-preferred-size: $value;
     flex-basis: $value;
+}
+
+/**
+ * `flex-direction` prefixer.
+ *
+ * @param {String} $direction row | row-reverse | column | column-reverse
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction flex-direction on MDN
+ * 
+ * @group css3
+ */
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
 }
 
 /**
@@ -229,6 +229,8 @@
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform#rotate transform: rotate() on MDN
  * 
+ * @requires {mixin} transform
+ *
  * @group css3
  */
 @mixin rotate($angle) {
@@ -290,7 +292,7 @@
 
 /**
  * `transition` prefixer.
- * Do not use when transitionning prefixed properties
+ * Do not use when transitioning prefixed properties
  * to avoid impossible code like `-moz-transition: -webkit-border-radius 1s`.
  *
  * @param {Arglist} $args
